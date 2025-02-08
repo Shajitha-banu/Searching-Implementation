@@ -1,0 +1,71 @@
+import java.util.*;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        // Input for array size
+        System.out.println("Enter the array size:");
+        int size = in.nextInt();
+        
+        int[] arr = new int[size];
+        
+        // Input for array elements
+        System.out.println("Enter sorted array elements:");
+        for (int k = 0; k < size; k++) {
+            arr[k] = in.nextInt();
+        }
+
+        // Get target element from user
+        System.out.println("Enter the target element:");
+        int target=in.nextInt();
+        int start=0;
+        int end=arr.length-1;
+        int flag=0;
+        
+        // Binary Search logic
+        while(start<=end)
+        {
+            int mid=(start+end)/2;
+            if(arr[mid]==target)
+            {
+                System.out.println("Element found at the index"+mid);
+                flag=1;
+                break;
+            }
+            
+            else if(arr[mid]<start)
+            {
+                start=mid+1;
+            }
+            
+            else
+            {
+                end=mid-1;
+            }
+            
+        }
+            if(flag==0)
+            {
+            System.out.println("Element Not Found");
+            }
+    }
+}
+
+
+
+
+/*Output:
+
+Enter the array size:
+3
+
+Enter array elements:
+4
+5
+6
+
+Enter the target element:
+5
+
+Element found at the index 1*/
