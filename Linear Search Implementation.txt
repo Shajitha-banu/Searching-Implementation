@@ -1,0 +1,56 @@
+//Linear Search
+
+import java.util.*;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        // Input for array size
+        System.out.println("Enter the array size:");
+        int size = in.nextInt();
+        
+        int[] arr = new int[size];
+        
+        // Input for array elements
+        System.out.println("Enter array elements:");
+        for (int k = 0; k < size; k++) {
+            arr[k] = in.nextInt();
+        }
+
+        // Get target element from user
+        System.out.println("Enter the target element:");
+        int target=in.nextInt();
+
+        int flag=0;
+
+        for(int i=0;i<size;i++)
+        {
+            if(arr[i]==target)
+            {
+                System.out.println("Element found at the index "+i);
+            }
+            flag=1;
+        }
+
+            if(flag==0)
+            {
+            System.out.println("Element Not Found");
+            }
+    }
+}
+
+
+
+Output:
+
+Enter array elements:
+7
+9
+1 
+5
+
+Enter the target element:
+3
+
+Element found at the index 3
